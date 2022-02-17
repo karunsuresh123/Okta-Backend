@@ -25,7 +25,7 @@ function authenticationRequired(req, res, next) {
   const audience = sampleConfig.resourceServer.assertClaims.aud;
   return oktaJwtVerifier.verifyAccessToken(accessToken, audience)
     .then((jwt) => {
-      console.log("jwt token", jwt);
+      //console.log("jwt token", jwt);
       req.jwt = jwt;
       next();
     })

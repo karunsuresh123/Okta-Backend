@@ -11,7 +11,7 @@ const model = new Schema({
     required: true
   },
   daytime: {
-    type: String,
+    type: Date,
     required: true
   },
   reminder: {

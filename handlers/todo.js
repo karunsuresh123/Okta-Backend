@@ -46,7 +46,6 @@ exports.create = async (req, res) => {
     }
 
     const todo = await modelTodo.create({ text, daytime, reminder });
-    console.log("RETURNED..: ",todo)
 
     return res.status(201).json(todo);
   }
@@ -59,7 +58,6 @@ exports.create = async (req, res) => {
 exports.update = async (req, res) => {
   try {
     const id = req.params.id;
-    console.log("IDDD: ",id)
     const Objid = mongoose.Types.ObjectId(id);
     const text = req.body.text;
     const daytime = req.body.daytime;
@@ -95,7 +93,6 @@ exports.update = async (req, res) => {
 exports.delete = async (req, res) => {
   //const { id } = req.params;
   const id = req.params.id;
-  console.log("ID  :  ",id);
 
   try {
     const todo = await modelTodo.deleteOne({ _id: id });
